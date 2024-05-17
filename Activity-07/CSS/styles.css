@@ -1,0 +1,40 @@
+/*Styling body text alignment making all text to be text aligned center*/
+body {
+    background-color: beige; 
+    margin: 0 auto; 
+    width: 80%;
+    text-align: center
+    }
+header {
+    background-color:  rgb(153, 208, 153);
+    text-align: center;
+    }
+h1 {color:rgb(124, 69, 2)
+}
+
+h2 {
+    color:rgb(124, 69, 2)
+
+}
+
+img {width: 100%; 
+}
+
+#phopic{box-shadow: 5px 5px 15px grey;
+}
+
+#banhMipic {border: 3px solid rgb(113, 86, 73);
+}
+
+#summerRollspic {border-radius: 15px;
+}
+
+/*Styling text color for the footer section*/
+footer{
+    background-color: rgb(153, 208, 153);
+    color: blue; 
+}
+
+/*Styling text highlight for all the h2 tags using class*/
+.highlight{background-color: yellow;
+}
