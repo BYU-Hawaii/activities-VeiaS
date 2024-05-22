@@ -1,0 +1,18 @@
+nav ul{
+    list-style: none;
+    padding: none;
+    
+}
+nav li {
+    display: inline;
+}
+nav a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    padding: 15px 16px;
+}
+nav a:hover{
+    color: antiquewhite;
+    background-color: gray;
+}
