@@ -1,62 +1,76 @@
-        nav{
-            background-color: pink;
-            display: flex;
-            justify-content: space-around;
-        }
-        nav a {
-            text-decoration: none;
-            color: black;
-            padding: 10px;
-        }
-        .active {
-            color: white;
-        }
+nav{
+    background-color: pink;
+    display: flex;
+    float:none;
+    justify-content: space-around;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 14px 16px;
+    border-right: 1px solid rgb(21, 75, 21);
+    text-align: center;
+    margin: 1%;
+}
+.active {
+    color: white;
+}
 
-        ul {
-            list-style-image: url('../images/hibiscus3.png');
-        }
-        figure{
-            margin: 20px 0;
-            padding: 10px;
-            border: 1px solid pink;
-            background: solid burlywood
-        }
+ul {
+    list-style-image: url('../images/hibiscus3.png');
+}
+figure{
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid pink;
+}
 
-        figure img{
-            width: 80%;
-            margin: 0 auto 0 auto;
-            display: block;
-            border-radius: 15px;
-            box-shadow: 5px 5px 15px grey;
-        }
-        figcaption{
-            font-size: 12px;
-            font-weight: 5px;
-            text-align: center;
-            color: #555;
-            margin-top: 10px;
-        }
-        body{
-            font-family: cursive;
-            background-color: rgb(107, 226, 253); 
-            background-image: url('../images/pink-250774_640.jpg'); 
-            width: 650px;
-            margin: 0 auto;
-        }
-        header{
-            background-color: azure;  
-            text-align: center; 
-            border: 4px solid pink;
-        }
-        h1{
-            color: rgb(21, 75, 21);
-        }
-        section{
-            background-color: azure; 
-            border: 4px solid pink;
-        }
-        footer{
-            background-color: azure;
-            text-align: center;
-        }
+figure img{
+    width: 80%;
+    margin: 0 auto 0 auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px grey;
+}
+
+figcaption{
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    margin-top: 10px;
+}
+body{
+    font-family: cursive;
+    background-image: url('../images/pink-250774_640.jpg'); 
+    width: 650px;
+    margin: 0 auto;
+}
+
+header{
+    background-color: azure;  
+    text-align: center; 
+    border: 4px solid pink;
+}
+
+h1{
+    color: rgb(21, 75, 21);
+}
+
+section{
+    background-color: azure; 
+    border: 4px solid pink;
+}
+
+div{
+    background-color: azure; 
+    border: 4px solid pink;
+}
+
+footer{
+    background-color: azure;
+    text-align: center;
+}
 
