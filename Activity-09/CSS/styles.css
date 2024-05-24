@@ -37,3 +37,93 @@
     clear: both;
     display: table;
 }
+
+/*styling menu bar*/
+nav ul{
+    list-style: none;
+    padding: none;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+/*horizontal display*/
+nav li {
+    display: inline;
+    float: left;
+}
+/*style <a> elements*/
+nav a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    padding: 15px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+/*icon styles*/
+nav a::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+/*specific icons*/
+
+nav a > i {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+nav a > .fa-home::before {
+    color: white;
+}  
+nav a > .fa-info-circle::before {
+    color: white; 
+}
+  
+nav a > .fa-cogs::before {
+    color: white;
+}
+  
+nav a > .fa-envelope::before {
+    color: white; 
+}
+
+/*dropdown menu*/
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #111;
+}
+nav ul li:hover > ul {
+    display: inherit;
+}
+nav ul ul li {
+    width: 200px;
+    float: none;
+    display: list-item;
+}
+
+/*hover and active to know which page you are on */
+li a:hover {
+    background-color: #111;
+  }
+nav a:hover{
+    color: antiquewhite;
+    background-color: gray;
+}
+.active{
+    background-color: grey;
+}
