@@ -1,7 +1,9 @@
+/*styling menu bar*/
 nav ul{
     list-style: none;
     padding: none;
 }
+
 ul{
     list-style-type: none;
     margin: 0;
@@ -9,38 +11,56 @@ ul{
     overflow: hidden;
     background-color: #333;
 }
-li{
-    float: left;
-}
+/*horizontal display*/
 nav li {
     display: inline;
+    float: left;
 }
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-nav a{
+/*style <a> elements*/
+nav a {
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: larger;
     padding: 15px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
 }
-/*hover and active to know which page you are on */
-li a:hover {
-    background-color: #111;
-  }
-nav a:hover{
-    color: antiquewhite;
-    background-color: gray;
+
+/*icon styles*/
+nav a::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
 }
-.active{
-    background-color: #04AA6D;
+
+/*specific icons*/
+
+nav a > i {
+    margin-right: 5px;
+    vertical-align: middle;
 }
+
+nav a > .fa-home::before {
+    color: white;
+}  
+nav a > .fa-info-circle::before {
+    color: white; 
+}
+  
+nav a > .fa-cogs::before {
+    color: white;
+}
+  
+nav a > .fa-envelope::before {
+    color: white; 
+}
+
 /*dropdown menu*/
 nav ul ul {
     display: none;
@@ -56,23 +76,14 @@ nav ul ul li {
     display: list-item;
 }
 
-/*icon styles*/
-nav a::before {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url("../images/home.png");
-    background-size: contain;
-    margin-right: 5px;
-    vertical-align: middle;
-    background-repeat: no-repeat;
+/*hover and active to know which page you are on */
+li a:hover {
+    background-color: #111;
+  }
+nav a:hover{
+    color: antiquewhite;
+    background-color: gray;
 }
-/*specific icons*/
-nav a[href*="home"]::before {
-    background-image: url("../images/home.png");
-  }
-  
-  nav a[href*="about"]::before {
-    background-image: url("../images/about.png");
-  }
+.active{
+    background-color: grey;
+}
