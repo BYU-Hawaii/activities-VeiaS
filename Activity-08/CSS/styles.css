@@ -1,7 +1,7 @@
 /*styling menu bar*/
 nav ul{
     list-style: none;
-    padding: none;
+    padding: 0;
 }
 
 ul{
@@ -39,33 +39,19 @@ nav a::before {
     background-repeat: no-repeat;
 }
 
-/*specific icons*/
+/*icons*/
 
 nav a > i {
     margin-right: 5px;
     vertical-align: middle;
-}
-
-nav a > .fa-home::before {
     color: white;
-}  
-nav a > .fa-info-circle::before {
-    color: white; 
-}
-  
-nav a > .fa-cogs::before {
-    color: white;
-}
-  
-nav a > .fa-envelope::before {
-    color: white; 
 }
 
 /*dropdown menu*/
 nav ul ul {
     display: none;
     position: absolute;
-    background-color: #111;
+    background-color: #333;
 }
 nav ul li:hover > ul {
     display: inherit;
