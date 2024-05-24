@@ -16,3 +16,16 @@ nav a:hover{
     color: antiquewhite;
     background-color: gray;
 }
+.active{
+    background-color: #04AA6D;
+}
+nav a:before{
+    content: "";
+    display: inline;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/home.png");
+    background-size: cover;
+    margin-right: 5px;
+    vertical-align: middle;
+}
