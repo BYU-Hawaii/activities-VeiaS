@@ -1,17 +1,39 @@
 nav ul{
     list-style: none;
     padding: none;
-    
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li{
+    float: left;
 }
 nav li {
     display: inline;
 }
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
 nav a{
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: larger;
     padding: 15px 16px;
 }
+/*hover and active to know which page you are on */
+li a:hover {
+    background-color: #111;
+  }
 nav a:hover{
     color: antiquewhite;
     background-color: gray;
@@ -19,13 +41,38 @@ nav a:hover{
 .active{
     background-color: #04AA6D;
 }
-nav a:before{
+/*dropdown menu*/
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #111;
+}
+nav ul li:hover > ul {
+    display: inherit;
+}
+nav ul ul li {
+    width: 200px;
+    float: none;
+    display: list-item;
+}
+
+/*icon styles*/
+nav a::before {
     content: "";
-    display: inline;
+    display: inline-block;
     width: 20px;
     height: 20px;
     background-image: url("../images/home.png");
-    background-size: cover;
+    background-size: contain;
     margin-right: 5px;
     vertical-align: middle;
+    background-repeat: no-repeat;
 }
+/*specific icons*/
+nav a[href*="home"]::before {
+    background-image: url("../images/home.png");
+  }
+  
+  nav a[href*="about"]::before {
+    background-image: url("../images/about.png");
+  }

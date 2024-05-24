@@ -1,0 +1,39 @@
+/*Flexbox layout- use for the colums*/
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+.colum {
+    flex: 2;
+    margin: 10px;
+    padding: 20px;
+    background-color: antiquewhite;
+    border: 1 px solid #ccc;
+}
+
+/*floated image- use for text to wrap around images*/
+.float-container {
+    padding: 0 20px;
+    background-color: #ccc;
+}
+
+.float-container img {
+    float: left;
+    margin-left: 20px;
+    width: 25%;
+}
+
+.float-left {
+    float: left;
+    margin-right: 20px;
+    width: 150px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
