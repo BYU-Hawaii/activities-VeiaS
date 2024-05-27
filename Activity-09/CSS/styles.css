@@ -20,7 +20,7 @@
     background-color: #ccc;
 }
 
-.float-container img {
+img {
     float: left;
     margin-left: 20px;
     width: 25%;
