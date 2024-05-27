@@ -1,4 +1,4 @@
-/*Flexbox layout- use for the colums*/
+/*Two-Column Layout*/
 .flex-container {
     display: flex;
     justify-content: space-between;
@@ -14,16 +14,16 @@
     border: 1 px solid #ccc;
 }
 
-/*floated image- use for text to wrap around images*/
+/*floated image*/
 .float-container {
     padding: 0 20px;
     background-color: #ccc;
 }
 
-img {
+.float-container img {
     float: left;
-    margin-left: 20px;
-    width: 25%;
+    margin-left: 5px;
+    width: 50%;
 }
 
 .float-left {
@@ -32,16 +32,21 @@ img {
     width: 150px;
 }
 
+.float-right {
+    float: right;
+    margin-left: 10px;
+}
+
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
 
-/*styling menu bar*/
+/*styling nav bar*/
 nav ul{
     list-style: none;
-    padding: none;
+    padding: 0;
 }
 
 ul{
@@ -79,33 +84,17 @@ nav a::before {
     background-repeat: no-repeat;
 }
 
-/*specific icons*/
-
 nav a > i {
     margin-right: 5px;
     vertical-align: middle;
-}
-
-nav a > .fa-home::before {
     color: white;
-}  
-nav a > .fa-info-circle::before {
-    color: white; 
-}
-  
-nav a > .fa-cogs::before {
-    color: white;
-}
-  
-nav a > .fa-envelope::before {
-    color: white; 
 }
 
 /*dropdown menu*/
 nav ul ul {
     display: none;
     position: absolute;
-    background-color: #111;
+    background-color: #333;
 }
 nav ul li:hover > ul {
     display: inherit;
@@ -116,7 +105,7 @@ nav ul ul li {
     display: list-item;
 }
 
-/*hover and active to know which page you are on */
+/*hover and active states */
 li a:hover {
     background-color: #111;
   }
