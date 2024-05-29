@@ -4,6 +4,7 @@
     justify-content: space-between;
     padding: 20px;
     background-color: aliceblue;
+    margin-right: 10px;
 }
 
 .colum {
@@ -17,24 +18,14 @@
 /*floated image*/
 .float-container {
     padding: 0 20px;
-    background-color: #ccc;
+    background-color: aliceblue;
 }
 
 .float-container img {
     float: left;
     margin-left: 5px;
-    width: 50%;
-}
-
-.float-left {
-    float: left;
     margin-right: 20px;
-    width: 150px;
-}
-
-.float-right {
-    float: right;
-    margin-left: 10px;
+    width: 65%;
 }
 
 .clearfix::after {
@@ -42,20 +33,24 @@
     clear: both;
     display: table;
 }
-
+/*floated text*/
+.main-content {
+    margin: 0 auto;
+    text-align: left; 
+    position: sticky;
+    top: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 /*styling nav bar*/
 nav ul{
     list-style: none;
     padding: 0;
-}
-
-ul{
     list-style-type: none;
     margin: 0;
-    padding: 0;
     overflow: hidden;
     background-color: #333;
 }
+
 /*horizontal display*/
 nav li {
     display: inline;
