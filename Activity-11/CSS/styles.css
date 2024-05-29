@@ -30,3 +30,74 @@
 .item4 {
     grid-column: 3/5;
 }
+
+/*styling nav bar*/
+nav ul{
+    list-style: none;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/*horizontal display*/
+nav li {
+    display: inline;
+    float: left;
+}
+/*style <a> elements*/
+nav a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    padding: 15px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+/*icon styles*/
+nav a::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+nav a > i {
+    margin-right: 5px;
+    vertical-align: middle;
+    color: white;
+}
+
+/*dropdown menu*/
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+}
+nav ul li:hover > ul {
+    display: inherit;
+}
+nav ul ul li {
+    width: 200px;
+    float: none;
+    display: list-item;
+}
+
+/*hover and active states */
+li a:hover {
+    background-color: #111;
+  }
+nav a:hover{
+    color: antiquewhite;
+    background-color: gray;
+}
+.active{
+    background-color: grey;
+}
