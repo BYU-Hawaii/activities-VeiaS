@@ -8,7 +8,7 @@ header {
   background-color: gold; /*misspelled the color to G0ld instead of Gold*/
   color: #004d00;
   text-align: center;
-  font-size: 2em; /*there might be something changed here but not sure*/
+  font-size: 2em;
   padding: 20px; /*miss spelled padding to "paddding"*/
   margin: 0;
 }
