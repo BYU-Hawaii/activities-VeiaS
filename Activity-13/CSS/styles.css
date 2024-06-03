@@ -1,0 +1,83 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: wheat;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    padding: 15px 16px;
+    display: block;
+    color: green;
+}
+
+li:hover {
+    background-color: aliceblue;
+}
+
+nav ul ul li {
+    width: 200px;
+    float: none;
+    display: list-item;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: wheat;
+}
+
+nav ul li:hover > ul {
+    display: inherit;
+}
+
+nav a::before {
+    content: "";
+    display: inline-block;
+    background-size: contain;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px grey;
+}
+
+body {
+    background-color: bisque;
+    font-size: 20px;
+}
+
+h1{
+    font-weight: 900;
+    font-size: 30px;
+}
+
+/*media queries used to help the page look good on different devices*/
+/*min-width just overrides the top styles for the grid-container after it exceeds the specified min width*/
+@media (min-width: 768px) {
+    body {
+        background-color: blue;
+        font-size: 18px;
+    }
+
+    li {
+        float: left;
+    }
+
+    img {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        border-radius: 15px;
+        box-shadow: 5px 5px 15px grey;
+    }
+}
