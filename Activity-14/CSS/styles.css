@@ -81,10 +81,11 @@ nav ul li:hover > ul {
     display: inherit;
 }
 
+/*tablet view*/
 @media (min-width: 768px) {
     .grid-container {
         grid-template-areas: 
-        "nav"/*swapped the header and nav*/
+        "nav"
         "header"
         "main"
         "footer";
@@ -101,8 +102,40 @@ nav ul li:hover > ul {
     }
 }
 
+/*desktop view*/
 @media (min-width: 1024px) {
     .gallery img {
         width: calc(33.33% - 10px);
+    }
+
+    body {
+        background-color: aliceblue;
+    }
+
+    .header {
+        background-color: #333;
+        color: aliceblue;
+    }
+
+    .footer {
+        background-color: aliceblue;
+        color: #333;
+    }
+
+    /*styling the nav bar*/
+    .nav ul{
+        background-color: aliceblue;
+    }
+
+    .nav a {
+        color: #333;
+    }
+
+    .nav ul ul {
+        background-color: white;
+    }
+
+    .nav li:hover {
+        background-color: whitesmoke;
     }
 }
