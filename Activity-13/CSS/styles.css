@@ -183,9 +183,25 @@ h1{
         border-radius: 15px;
         max-width: fit-content;
     }
+    
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px; /*added a gap between the rows and columns*/
+        padding: 20px;/*added space before and after the grid*/
+    }
+    
+    .grid-item {
+        background-color: gray;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        border: 2px solid #333;
+    }
 
     h1 {
-        font-size: 36%;
+        font-size: 36px;
     }
 
     h3 {
