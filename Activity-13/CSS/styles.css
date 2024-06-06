@@ -62,7 +62,7 @@ img {
   background-color: wheat;
 }
 
-.nav li:hover {
+.nav li a:hover {
   background-color: black;
 }
 
