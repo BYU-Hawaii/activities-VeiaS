@@ -1,11 +1,55 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: wheat;
+/*body layout and design*/
+body {
+  background-color: bisque;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 
+h1{
+  font-weight: 900;
+  font-size: 30px;
+}
+
+/*page layout*/
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "nav"
+  "main"
+  "footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: aliceblue;
+  color: #333;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+footer {
+  grid-area: footer;
+  background-color: #333;
+  text-align: center;
+  padding: 1rem;
+}
+
+/*figures*/
+img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px grey;
+}
+
+/*nav bar*/
+nav {
+  background-color: wheat;
+}
 nav a {
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -13,10 +57,16 @@ nav a {
     padding: 15px 16px;
     display: block;
     color: green;
+    background-color: wheat;
 }
 
-li:hover {
+nav li:hover {
     background-color: aliceblue;
+}
+
+.nav ul {
+  list-style-type: none;
+  background-color: wheat;
 }
 
 nav ul ul li {
@@ -35,176 +85,79 @@ nav ul li:hover > ul {
     display: inherit;
 }
 
-nav a::before {
-    content: "";
-    display: inline-block;
-    background-size: contain;
-    vertical-align: middle;
-    background-repeat: no-repeat;
+/*Tablet view*/
+@media (min-width: 768px) {
+  /*page layout*/
+  .grid-container {
+    grid-template-areas: 
+    "nav"
+    "header"
+    "main"
+    "footer";
 }
 
-img {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    border-radius: 15px;
-    box-shadow: 5px 5px 15px grey;
-}
-
-body {
-    background-color: bisque;
-    font-size: 20px;
-}
-
-h1{
-    font-weight: 900;
-    font-size: 30px;
-}
-
-.flex-container {
+  body {
+    background-color: honeydew;
+    font-size: 18px;
+  }
+    
+    /*nav bar*/
+  nav li {
+    float: left;
+    display: inline;
+    overflow: hidden;
+  }
+    
+  /*figure*/
+  img {
+    width: calc(50% - 10px);
+  }
+    
+  /* Two-column layout */
+  .main {
+    grid-area: main;
+    flex-direction: row;
     display: flex;
-    flex-direction: column;
-}
-
-.column {
-    width: 100%;
+    flex-wrap: wrap;
+  }
+    
+  .column {
+    width: 50%;
     padding: 15px;
     box-sizing: border-box;
+  }
+
+  .column:last-child {
+    width: 100%
+  }
 }
 
-.float-container {
-    padding: 15px;
-}
-  
-.main-content {
-    width: 100%;
-}
-
-/*media queries used to help the page look good on different devices*/
-/*min-width just overrides the top styles for the grid-container after it exceeds the specified min width*/
-@media (min-width: 768px) {
-    body {
-        background-color: blue;
-        font-size: 18px;
-    }
-
-    li {
-        float: left;
-    }
-
-    img {
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-        border-radius: 15px;
-        box-shadow: 5px 5px 15px grey;
-        max-width: fit-content;
-    }
-
-    .flex-container {
-        flex-direction: row;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .column {
-        width: 50%;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-
-    .column:last-child {
-        width: 100%;
-    }
-
-    .float-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .main-content {
-         width: 70%;
-        padding-right: 15px;
-        box-sizing: border-box;
-    }
-
-    .sidebar {
-        width: 30%;
-        padding-left: 15px;
-        box-sizing: border-box;
-    }
-}
-
-/*need to fix this so all three columns are working*/
+/*desktop view*/
 @media (min-width: 1024px) {
-    body{
-        font-size: 22px;
-        background-color: azure;
-    }
-
-    .flex-container {
-        flex-direction: row;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .float-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  body {
+    font-size: 22px;
+    background-color: khaki;
+  }
     
-    .column {
-        width: 30%;
-        padding-right: 15px;
-        box-sizing: border-box;
-    }
-
-    .column:last-child {
-        width: 100%;
-    }
-
-    .main-content {
-        width: 75%;
-        padding-right: 15px;
-        box-sizing: border-box;
-    }
+  /*Three-column layout */
+  .flex-container {
+    flex-direction: row;
+  }
     
-    .sidebar {
-        width: 25%;
-        padding-left: 15px;
-        box-sizing: border-box;
-    }
+  .column {
+    width: 33.33%;
+    padding: 20px;
+  }
 
-    img {
-        width: 100%;
-        box-shadow: 8px 8px 20px grey;
-        margin: 0 auto;
-        display: block;
-        border-radius: 15px;
-        max-width: fit-content;
-    }
-    
-    .grid-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 10px; /*added a gap between the rows and columns*/
-        padding: 20px;/*added space before and after the grid*/
-    }
-    
-    .grid-item {
-        background-color: gray;
-        color: white;
-        text-align: center;
-        font-size: 20px;
-        border: 2px solid #333;
-    }
+  .main-content {
+    width: 75%;
+  }
 
-    h1 {
-        font-size: 36px;
-    }
+  h1 {
+    font-size: 36px;
+  }
 
-    h3 {
-        font-size: 28px;
-    }
+  h3 {
+    font-size: 28px;
+  }
 }
