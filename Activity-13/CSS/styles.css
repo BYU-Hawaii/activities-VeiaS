@@ -1,10 +1,3 @@
-body {
-  background-color: bisque;
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
-}
-
 h1{
   font-weight: 900;
   font-size: 30px;
@@ -18,6 +11,10 @@ h1{
   "nav"
   "main"
   "footer";
+  background-color: bisque;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -29,14 +26,14 @@ h1{
 }
 
 
-footer {
+.footer {
   grid-area: footer;
-  background-color: #333;
+  background-color: wheat;
+  color: green;
   text-align: center;
   padding: 1rem;
 }
 
-/*figures*/
 img {
   width: 100%;
   margin: 0 auto;
@@ -46,10 +43,11 @@ img {
 }
 
 /*nav bar*/
-nav {
+.nav {
   background-color: wheat;
 }
-nav a {
+
+.nav a {
   text-decoration: none;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: larger;
@@ -59,29 +57,30 @@ nav a {
   background-color: wheat;
 }
 
-nav li:hover {
-  background-color: aliceblue;
-}
-
 .nav ul {
   list-style-type: none;
   background-color: wheat;
 }
 
-nav ul ul li {
-  width: 200px;
-  float: none;
-  display: list-item;
+.nav li:hover {
+  background-color: black;
 }
 
-nav ul ul {
+/*dropdown menu*/
+.nav ul ul {
   display: none;
   position: absolute;
   background-color: wheat;
 }
 
-nav ul li:hover > ul {
-  display: inherit;
+.nav ul ul li {
+  width: 200px;
+  float: none;
+  display: list-item;
+}
+
+.nav ul li:hover > ul {
+  display: block;
 }
 
 /*Tablet view*/
@@ -93,21 +92,17 @@ nav ul li:hover > ul {
     "header"
     "main"
     "footer";
-}
-
-  body {
     background-color: honeydew;
     font-size: 18px;
-  }
+}
     
-    /*nav bar*/
-  nav li {
+  /*nav bar*/
+  .nav li {
     float: left;
     display: inline;
     overflow: hidden;
   }
-    
-  /*figure*/
+
   img {
     width: calc(50% - 10px);
   }
@@ -133,9 +128,9 @@ nav ul li:hover > ul {
 
 /*desktop view*/
 @media (min-width: 1024px) {
-  body {
+  .grid-container {
     font-size: 22px;
-    background-color: khaki;
+    background-color: salmon;
   }
     
   /*Three-column layout */
@@ -144,7 +139,7 @@ nav ul li:hover > ul {
   }
     
   .column {
-    width: 33.33%;
+    width: 30%;
     padding: 20px;
   }
 
