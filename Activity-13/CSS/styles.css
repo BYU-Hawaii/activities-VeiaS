@@ -1,4 +1,3 @@
-/*body layout and design*/
 body {
   background-color: bisque;
   font-size: 20px;
@@ -51,17 +50,17 @@ nav {
   background-color: wheat;
 }
 nav a {
-    text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: larger;
-    padding: 15px 16px;
-    display: block;
-    color: green;
-    background-color: wheat;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  padding: 15px 16px;
+  display: block;
+  color: green;
+  background-color: wheat;
 }
 
 nav li:hover {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 .nav ul {
@@ -70,19 +69,19 @@ nav li:hover {
 }
 
 nav ul ul li {
-    width: 200px;
-    float: none;
-    display: list-item;
+  width: 200px;
+  float: none;
+  display: list-item;
 }
 
 nav ul ul {
-    display: none;
-    position: absolute;
-    background-color: wheat;
+  display: none;
+  position: absolute;
+  background-color: wheat;
 }
 
 nav ul li:hover > ul {
-    display: inherit;
+  display: inherit;
 }
 
 /*Tablet view*/
