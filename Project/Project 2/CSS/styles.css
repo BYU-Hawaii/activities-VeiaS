@@ -5,18 +5,11 @@
   box-sizing: border-box;
 }
 
-body,html{
-  scroll-behavior: smooth;
-}
 /* Mobile-first base styles */
 nav {
   background-color: pink;
   display: flex;
   justify-content: space-around;
-}
-
-.hamburger {
-  display: none;
 }
 
 .navMenu a {
@@ -32,56 +25,23 @@ nav {
   color: white;
 }
 
-ul {
+section ul {
   list-style-image: url('../images/hibiscus3.png');
 }
 
 .navMenu {
+  width: 100%;
   display: flex;
   flex-direction: column;
   list-style: none;
   align-items: center;
   gap: 0.5rem;
-}
-
-.navMenu,
-.navMenu ul {
   list-style-type: none;
-  list-style-image: none;
-}
-
-.navMenu ul {
-  display: none;
-  background-color: pink;
-  position: relative;
-}
-
-.Ham ul li {
-  width: 200px;
-  float: none;
-  display: list-item;
-}
-
-.Ham li:hover {
-  background-color: black;
-}
-
-.Ham li:hover > a {
-  color: white;
-}
-
-.navMenu .Ham:hover {
-  border: 1px solid black;
-}
-
-.navMenu .Ham:hover > ul {
-  display: block;
 }
 
 figure {
   margin: 20px 0;
   padding: 10px;
-  border: 1px solid pink;
 }
 
 figure img {
@@ -161,13 +121,8 @@ footer {
     top: 0;
   }
 
-  .navMenu ul {
-    position: absolute;
-  }
-
   .navMenu {
     flex-direction: row;
-    gap: 5rem;
   }
 
   .navMenu > * {
@@ -182,32 +137,15 @@ footer {
     justify-content: center;
   }
 
-  .navMenu ul {
-    position: absolute;
-  }
-
-  header{
-    position: sticky;
-    top: 0;
-  }
-
   section > * {
     width: 33.33%;
     padding: 20px;
     box-sizing: border-box;
   }
 
-  section > ul {
-    width: max-content;
-  }
-
   .navMenu {
     flex-direction: row;
-    justify-content: center;
-    gap: 10rem;
+    justify-content: space-between;
   }
 
-  .navMenu > * {
-    flex: 1;
-  }
 }
