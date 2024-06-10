@@ -25,7 +25,7 @@ nav {
   color: white;
 }
 
-section ul {
+main ul {
   list-style-image: url('../images/hibiscus3.png');
 }
 
@@ -37,6 +37,21 @@ section ul {
   align-items: center;
   gap: 0.5rem;
   list-style-type: none;
+  grid-area: nav;
+}
+
+/*navbar layout*/
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "navMenu"
+  "main"
+  "footer";
+  font-family: cursive;
+  background-image: url('../images/pink-250774_640.jpg');
+  width: 80%;
+  margin: 0 auto;
 }
 
 figure {
@@ -60,14 +75,8 @@ figcaption {
   margin-top: 10px;
 }
 
-body {
-  font-family: cursive;
-  background-image: url('../images/pink-250774_640.jpg');
-  width: 80%;
-  margin: 0 auto;
-}
-
-header {
+.header {
+  grid-area: header;
   background-color: azure;
   text-align: center;
   border: 4px solid pink;
@@ -81,7 +90,8 @@ h3 {
   color: rgb(21, 75, 21);
 }
 
-section {
+.main {
+  grid-area: main;
   background-color: azure;
   border: 4px solid pink;
   padding: 20px;
@@ -89,12 +99,13 @@ section {
   flex-wrap: wrap;
 }
 
-section > *{
+.main > *{
   width: 100%;
   padding: 15px;
   box-sizing: border-box;
 }
-footer {
+.footer {
+  grid-area: footer;
   background-color: azure;
   text-align: center;
 }
@@ -106,13 +117,13 @@ footer {
     justify-content: center;
   }
 
-  section > * {
+  main > * {
     width: 50%;
     padding: 15px;
     box-sizing: border-box;
   }
 
-  section > ul {
+  main > ul {
     width: 100%;
   }
 
@@ -130,14 +141,24 @@ footer {
   }
 }
 
+/*navbar layout*/
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  "navMenu"
+  "header"
+  "main"
+  "footer";
+}
+
 /* Desktop view */
 @media (min-width: 1024px) {
   /* Three-column layout */
-  section {
+  main {
     justify-content: center;
   }
 
-  section > * {
+  main > * {
     width: 33.33%;
     padding: 20px;
     box-sizing: border-box;
