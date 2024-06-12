@@ -69,6 +69,11 @@ div {
     margin-bottom: 1rem;
 }
 
+/*main content padding*/
+div.content, main {
+    padding: 10px;
+}
+
 /*tablet view*/
 @media (min-width: 768px) {
     .grid-container {
