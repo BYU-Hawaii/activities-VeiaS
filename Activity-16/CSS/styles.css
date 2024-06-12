@@ -89,12 +89,6 @@ div.content, main {
         overflow: hidden;
     }
 
-    .gallery {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: auto auto;
-    }
-
     div.content {
         display: grid;
         grid-template-columns: auto auto;
@@ -110,6 +104,7 @@ div.content, main {
 
     .gallery img {
         width: calc(50% - 10px);
+        grid-template-columns: auto auto;
     }
 }
 
@@ -117,12 +112,6 @@ div.content, main {
 @media (min-width: 1024px) {
     .gallery img {
         width: calc(33.33% - 10px);
-    }
-
-    .gallery {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: auto auto auto;
     }
 
     div.content {
