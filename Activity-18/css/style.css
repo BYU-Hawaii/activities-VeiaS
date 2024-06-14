@@ -8,3 +8,37 @@
   display: none; 
 }
 
+/*page layout*/
+.registrationForm {
+  display: grid;
+  grid-template-areas: 
+  "username"
+  "email"
+  "phone"
+  "password"
+  "submit";
+}
+
+.registrationForm > .username { grid-area: username; }
+.registrationForm > .email { grid-area: email; }
+.registrationForm > .phone { grid-area: phone; }
+.registrationForm > .password { grid-area: password; }
+.registrationForm > .submit { grid-area: submit; }
+
+form {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/*tablet view*/
+@media (min-width: 768px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body {
+    background-color: aqua;
+  }
+}
