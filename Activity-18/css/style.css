@@ -9,22 +9,6 @@
 }
 
 /*page layout*/
-.registrationForm {
-  display: grid;
-  grid-template-areas: 
-  "username"
-  "email"
-  "phone"
-  "password"
-  "submit";
-}
-
-.registrationForm > .username { grid-area: username; }
-.registrationForm > .email { grid-area: email; }
-.registrationForm > .phone { grid-area: phone; }
-.registrationForm > .password { grid-area: password; }
-.registrationForm > .submit { grid-area: submit; }
-
 form {
   display: grid;
   grid-template-rows: auto;
@@ -34,11 +18,17 @@ form {
 
 /*tablet view*/
 @media (min-width: 768px) {
+  body {
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+  }
   form {
     grid-template-columns: 1fr 1fr;
+    background-color: plum;
   }
 
-  body {
-    background-color: aqua;
+  button {
+    align-items: center;
+    
   }
 }
