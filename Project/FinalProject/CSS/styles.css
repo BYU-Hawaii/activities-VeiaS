@@ -58,6 +58,12 @@ body {
     background-color: thistle;
 }
 
+.footer li {
+    display: inline;
+    float: left;
+    overflow: hidden;
+}
+
 /*styling the nav bar*/
 .nav a {
     text-decoration: none;
@@ -77,6 +83,10 @@ body {
 }
 
 .nav li:hover {
+    background-color: black;
+}
+
+.active {
     background-color: black;
 }
 
