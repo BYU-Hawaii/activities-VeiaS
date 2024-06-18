@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*page layout*/
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "nav"
+  "main"
+  "gallery"
+  "footer";
+}
+
+/* Header Styles */
+header {
+  grid-area: header;
+  background-color: #ffcc00;
+  color: thistle;
+  text-align: center;
+  padding: 1rem;
+}
+
+/*styling the nav bar*/
+.nav a {
+  text-decoration: none;
+  font-size: larger;
+  padding: 15px 16px;
+  display: block;
+  color: aliceblue;
+  list-style-type: none;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: thistle;
+}
+
+.nav li:hover {
+  background-color: black;
+}
+
+div {
+  margin-bottom: 1 rem;
+}
+
+/* Main Content Styles */
+main {
+  grid-area: main;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Gallery Styles */
+.gallery {
+  grid-area: gallery;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.games,
+.stories {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.game,
+.stories {
+  text-align: center;
+}
+
+.game img,
+.stories img {
+  max-width: 200px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  margin-right: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "nav gallery"
+      "footer footer";
+    grid-template-columns: 200px 1fr;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .navMenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav li {
+    border-bottom: none;
+  }
+}
