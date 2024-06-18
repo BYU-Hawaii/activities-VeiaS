@@ -86,8 +86,14 @@ body {
     background-color: black;
 }
 
+.nav li a:hover {
+    color: white;
+}
+
 .active {
-    background-color: black;
+    background-color: #00000033;
+
+
 }
 
 div {
@@ -128,6 +134,13 @@ div {
 /*main content padding*/
 div.content, main {
     padding: 10px;
+}
+
+.title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.about {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /*tablet view*/
