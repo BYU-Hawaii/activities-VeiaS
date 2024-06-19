@@ -1,54 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Word Scramble Game</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-  </style>
-</head>
-<body class="scramble">
-  <h1>Word Scramble Game</h1>
-  <p id="scrambledWord"></p>
-  <input type="text" id="userInput" placeholder="Enter the unscrambled word">
-  <button onclick="checkAnswer()">Submit</button>
-  <p id="result"></p>
-
-  <script>
-    const words = ["kia orana", "moe", "kai", "moana", "imene"];
-    let currentWord = "";
-    let scrambledWord = "";
-
-    function scrambleWord(word) {
-      let wordArray = word.split("");
-      for (let i = wordArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
-      }
-      return wordArray.join("");
-    }
-
-    function startGame() {
-      const randomIndex = Math.floor(Math.random() * words.length);
-      currentWord = words[randomIndex];
-      scrambledWord = scrambleWord(currentWord);
-      document.getElementById("scrambledWord").textContent = scrambledWord;
-    }
-
-    function checkAnswer() {
-      const userInput = document.getElementById("userInput").value.toLowerCase();
-      if (userInput === currentWord) {
-        document.getElementById("result").textContent = "Correct!";
-        startGame();
-      } else {
-        document.getElementById("result").textContent = "Incorrect. Try again.";
-      }
-      document.getElementById("userInput").value = "";
-    }
-
-    startGame();
-  </script>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Te Reo Playground</title>
+        <link rel="stylesheet" href="CSS/styles.css">
+    </head>
+    <body class="grid-container">
+        <header class="header">
+            <h1>Te Reo Playground</h1>
+            <h2>Word Scramble Game</h2>
+        </header>
+        <nav class="nav">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a class="active" href="wordscramble.html">Word Scramble</a></li>
+                <li><a href="matching.html">Matching Game</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <section class="game-guide">
+                <h3>How to Play Word Scramble</h3>
+                <ol>
+                    <li>Look at the jumbled letters on the screen.</li>
+                    <li>Try to unscramble the letters to make a word in Te Reo Māori.</li>
+                    <li>Type your answer in the input box.</li>
+                    <li>Click the "Submit" button to check if your answer is correct.</li>
+                    <li>If your answer is right, you'll see a "Correct!" message, and a new scrambled word will appear.</li>
+                    <li>If your answer is wrong, you'll see an "Incorrect. Try again." message, and you can try again.</li>
+                </ol>
+                <p>Have fun unscrambling the words and learning Te Reo Māori!</p>
+            </section>
+            <section class="game-area">
+                <p id="scrambledWord"></p>
+                <input type="text" id="userInput" placeholder="Enter the unscrambled word">
+                <button onclick="checkAnswer()">Submit</button>
+                <p id="result"></p>
+            </section>
+        </main>
+        <footer class="footer">
+            <nav>
+                <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Feedback</a></li>
+                </ul>
+            </nav>
+            <p>Where Learning is Fun</p>
+            <p>&copy; 2024 Te Reo Playground</p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
 </html>

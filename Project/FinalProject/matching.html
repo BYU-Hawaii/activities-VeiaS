@@ -1,85 +1,51 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Word Matching Game</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .word {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px;
-      background-color: #f0f0f0;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h1>Word Matching Game</h1>
-  <div id="wordContainer"></div>
-  <p id="message"></p>
-
-  <script>
-    const words = [
-      ["hello", "kia orana"],
-      ["sleep", "moe"],
-      ["eat", "kai"],
-      ["Ocean", "moana"],
-      ["sing", "imene"]
-    ];
-
-    let selectedWord = null;
-
-    function displayWords() {
-      const wordContainer = document.getElementById("wordContainer");
-      wordContainer.innerHTML = "";
-
-      words.forEach(wordPair => {
-        const word1 = document.createElement("span");
-        word1.textContent = wordPair[0];
-        word1.classList.add("word");
-        word1.addEventListener("click", selectWord);
-
-        const word2 = document.createElement("span");
-        word2.textContent = wordPair[1];
-        word2.classList.add("word");
-        word2.addEventListener("click", selectWord);
-
-        wordContainer.appendChild(word1);
-        wordContainer.appendChild(word2);
-      });
-    }
-
-    function selectWord(event) {
-      const selectedElement = event.target;
-      if (selectedWord === null) {
-        selectedElement.style.backgroundColor = "lightgreen";
-        selectedWord = selectedElement.textContent;
-      } else {
-        const wordPair = words.find(pair => pair.includes(selectedWord) && pair.includes(selectedElement.textContent));
-        if (wordPair) {
-          selectedElement.style.backgroundColor = "lightgreen";
-          document.getElementById("message").textContent = "Correct!";
-          setTimeout(() => {
-            selectedElement.style.backgroundColor = "#f0f0f0";
-            document.getElementById("message").textContent = "";
-            selectedWord = null;
-          }, 1000);
-        } else {
-          selectedElement.style.backgroundColor = "lightcoral";
-          document.getElementById("message").textContent = "Incorrect. Try again.";
-          setTimeout(() => {
-            selectedElement.style.backgroundColor = "#f0f0f0";
-            document.getElementById("message").textContent = "";
-            selectedWord = null;
-          }, 1000);
-        }
-      }
-    }
-
-    displayWords();
-  </script>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Te Reo Playground</title>
+        <link rel="stylesheet" href="CSS/styles.css">
+    </head>
+    <body class="grid-container">
+        <header class="header">
+            <h1>Te Reo Playground</h1>
+            <h2>Word Matching Game</h2>
+        </header>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wordscramble.html">Word Scramble</a></li>
+                <li><a class="active" href="matching.html">Matching Game</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <section class="game-guide">
+                <h3>How to Play Word Matching</h3>
+                <ol>
+                    <li>Look at the images and words on the screen.</li>
+                    <li>Click on a word and then click on the matching image.</li>
+                    <li>If you make a correct match, you'll see a "Correct!" message.</li>
+                    <li>If you make an incorrect match, you'll see an "Incorrect. Try again." message.</li>
+                </ol>
+                <p>Have fun matching the words and images in Te Reo Māori!</p>
+            </section>
+            <section class="game-area">
+                <div class="word-container"></div>
+                <p class="match-result"></p>
+            </section>
+        </main>
+        <footer class="footer">
+            <nav>
+                <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Feedback</a></li>
+                </ul>
+            </nav>
+            <p>Where Learning is Fun</p>
+            <p>&copy; 2024 Te Reo Playground</p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
 </html>

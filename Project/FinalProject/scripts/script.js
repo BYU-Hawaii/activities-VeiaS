@@ -1,6 +1,6 @@
 // wordScramble.js
 
-const words = ["kia orana", "moe", "kai", "moana", "imene"];
+const words = ["hello", "world", "computer", "language", "learn"];
 let currentWord = "";
 let scrambledWord = "";
 
@@ -31,4 +31,71 @@ function checkAnswer() {
   document.getElementById("userInput").value = "";
 }
 
-window.onload = startGame;
+startGame();
+
+
+
+// wordMatching.js
+
+const wordPairs = [
+    { word: "kia orana", image: "images/hello.png" },
+    { word: "moe", image: "images/sleep.png" },
+    { word: "kai", image: "images/food.png" },
+    { word: "moana", image: "images/ocean.png" },
+    { word: "imene", image: "images/sing.png" }
+];
+
+let selectedWord = null;
+const wordContainer = document.querySelector(".word-container");
+const matchResult = document.querySelector(".match-result");
+
+function displayWords() {
+    wordContainer.innerHTML = "";
+
+    wordPairs.forEach(pair => {
+        const wordItem = document.createElement("div");
+        wordItem.classList.add("word-item");
+        wordItem.addEventListener("click", selectItem);
+
+        const wordImage = document.createElement("img");
+        wordImage.src = pair.image;
+        wordImage.alt = pair.word;
+
+        const wordText = document.createElement("span");
+        wordText.textContent = pair.word;
+
+        wordItem.appendChild(wordImage);
+        wordItem.appendChild(wordText);
+        wordContainer.appendChild(wordItem);
+    });
+}
+
+function selectItem(event) {
+    const selectedElement = event.currentTarget;
+    const selectedText = selectedElement.querySelector("span").textContent;
+    const selectedImage = selectedElement.querySelector("img").alt;
+
+    if (selectedWord === null) {
+        selectedElement.classList.add("selected");
+        selectedWord = selectedText;
+    } else {
+        const matchingPair = wordPairs.find(pair => pair.word === selectedWord && pair.image === selectedImage);
+        if (matchingPair) {
+            matchResult.textContent = "Correct!";
+            setTimeout(() => {
+                matchResult.textContent = "";
+                selectedWord = null;
+                selectedElement.classList.remove("selected");
+            }, 1000);
+        } else {
+            matchResult.textContent = "Incorrect. Try again.";
+            setTimeout(() => {
+                matchResult.textContent = "";
+                selectedWord = null;
+                selectedElement.classList.remove("selected");
+            }, 1000);
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", displayWords);
