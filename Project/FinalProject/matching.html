@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Word Matching Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .word {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    
+  <h1>Word Matching Game</h1>
+  <div id="wordContainer"></div>
+  <p id="message"></p>
+
+  <script>
+    const words = [
+      ["hello", "kia orana"],
+      ["sleep", "moe"],
+      ["eat", "kai"],
+      ["Ocean", "moana"],
+      ["sing", "imene"]
+    ];
+
+    let selectedWord = null;
+
+    function displayWords() {
+      const wordContainer = document.getElementById("wordContainer");
+      wordContainer.innerHTML = "";
+
+      words.forEach(wordPair => {
+        const word1 = document.createElement("span");
+        word1.textContent = wordPair[0];
+        word1.classList.add("word");
+        word1.addEventListener("click", selectWord);
+
+        const word2 = document.createElement("span");
+        word2.textContent = wordPair[1];
+        word2.classList.add("word");
+        word2.addEventListener("click", selectWord);
+
+        wordContainer.appendChild(word1);
+        wordContainer.appendChild(word2);
+      });
+    }
+
+    function selectWord(event) {
+      const selectedElement = event.target;
+      if (selectedWord === null) {
+        selectedElement.style.backgroundColor = "lightgreen";
+        selectedWord = selectedElement.textContent;
+      } else {
+        const wordPair = words.find(pair => pair.includes(selectedWord) && pair.includes(selectedElement.textContent));
+        if (wordPair) {
+          selectedElement.style.backgroundColor = "lightgreen";
+          document.getElementById("message").textContent = "Correct!";
+          setTimeout(() => {
+            selectedElement.style.backgroundColor = "#f0f0f0";
+            document.getElementById("message").textContent = "";
+            selectedWord = null;
+          }, 1000);
+        } else {
+          selectedElement.style.backgroundColor = "lightcoral";
+          document.getElementById("message").textContent = "Incorrect. Try again.";
+          setTimeout(() => {
+            selectedElement.style.backgroundColor = "#f0f0f0";
+            document.getElementById("message").textContent = "";
+            selectedWord = null;
+          }, 1000);
+        }
+      }
+    }
+
+    displayWords();
+  </script>
 </body>
 </html>

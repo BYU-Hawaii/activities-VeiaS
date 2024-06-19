@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Te Reo Playground</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body class="grid-container">
+    <header class="header">
+        <h1>Te Reo Playground</h1>
+    </header>
+    <main class="main">
+        <section class="feedback">
+            <h1>Share Your Feedback</h1>
+            <form action="process_feedback.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating">
+                    <option value="5">Excellent</option>
+                    <option value="4">Good</option>
+                    <option value="3">Average</option>
+                    <option value="2">Poor</option>
+                    <option value="1">Very Poor</option>
+                </select>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="5" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Where Learning is Fun</p>
+        <p>&copy; 2024 Te Reo Playground</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

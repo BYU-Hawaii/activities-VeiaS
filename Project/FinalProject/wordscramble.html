@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Word Scramble Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+  </style>
 </head>
-<body>
-    
+<body class="scramble">
+  <h1>Word Scramble Game</h1>
+  <p id="scrambledWord"></p>
+  <input type="text" id="userInput" placeholder="Enter the unscrambled word">
+  <button onclick="checkAnswer()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    const words = ["kia orana", "moe", "kai", "moana", "imene"];
+    let currentWord = "";
+    let scrambledWord = "";
+
+    function scrambleWord(word) {
+      let wordArray = word.split("");
+      for (let i = wordArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
+      }
+      return wordArray.join("");
+    }
+
+    function startGame() {
+      const randomIndex = Math.floor(Math.random() * words.length);
+      currentWord = words[randomIndex];
+      scrambledWord = scrambleWord(currentWord);
+      document.getElementById("scrambledWord").textContent = scrambledWord;
+    }
+
+    function checkAnswer() {
+      const userInput = document.getElementById("userInput").value.toLowerCase();
+      if (userInput === currentWord) {
+        document.getElementById("result").textContent = "Correct!";
+        startGame();
+      } else {
+        document.getElementById("result").textContent = "Incorrect. Try again.";
+      }
+      document.getElementById("userInput").value = "";
+    }
+
+    startGame();
+  </script>
 </body>
 </html>
