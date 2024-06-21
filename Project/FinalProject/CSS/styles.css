@@ -143,26 +143,38 @@ div.content, main {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/*funfacts*/
+.story {
+    background-color: #f0f8ff;
+    border: 2px solid #87cefa;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.story h3 {
+    color: #1e90ff;
+}
+.fun-fact {
+    font-weight: bold;
+    color: #ff6347;
+}
+
 /*Wordscramble*/
-.word-scramble {
+.game-area {
     text-align: center;
     margin-bottom: 2rem;
 }
-.word-scramble h2 {
+.game-area #scrambledWord {
     font-size: 2rem;
-    margin-bottom: 1rem;
-}
-.word-scramble #scrambledWord {
-    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
-.word-scramble #userInput {
+.game-area #userInput {
     padding: 0.5rem;
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
-.word-scramble button {
+.game-area button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     background-color: #4CAF50;
@@ -170,10 +182,16 @@ div.content, main {
     border: none;
     cursor: pointer;
 }
-.word-scramble #result {
+.game-area #result {
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 1rem;
+}
+
+/*Feedback*/
+.feedback{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*tablet view*/
