@@ -4,41 +4,129 @@ function elementExists(id) {
 }
 
 // Word Scramble Game
-if (elementExists('scrambledWord')) {
-    const words = ["hello", "world", "computer", "language", "learn"];
-    let currentWord = "";
-    let scrambledWord = "";
+const words = {
+    easy: ["kia orana", "vai", "kai", "mama", "papa", "pepe", "moe", "ine", "ae", "kare", "ka kite", "ta'i", "rua", "toru", "'a", "rima", "ono", "itu", "varu", "reka", "motu", "nu", "niu"],
+    medium: ["ariki", "aroa", "'arere ra", "ingoa", "pe'ea", "koe", "moni", "muri", "meitaki", "moana", "rakau", "reva", "noni", "puka", "raro"],
+    hard: ["ta'i-nga'uru", "meri kiritimiti", "popongi manea", "kia manuia", "pi'a pa'i", "raparapa"]
+};
 
-    function scrambleWord(word) {
-        let wordArray = word.split("");
-        for (let i = wordArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
-        }
-        return wordArray.join("");
+let currentWord = "";
+let scrambledWord = "";
+let currentLevel = "easy";
+let score = 0;
+let timeLeft = 60;
+let timer;
+
+function elementExists(id) {
+    return document.getElementById(id) !== null;
+}
+
+function scrambleWord(word) {
+    let wordArray = word.split("");
+    for (let i = wordArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
     }
+    return wordArray.join("");
+}
 
-    function startGame() {
-        const randomIndex = Math.floor(Math.random() * words.length);
-        currentWord = words[randomIndex];
-        scrambledWord = scrambleWord(currentWord);
+function startGame() {
+    const wordList = words[currentLevel];
+    const randomIndex = Math.floor(Math.random() * wordList.length);
+    currentWord = wordList[randomIndex];
+    scrambledWord = scrambleWord(currentWord);
+    if (elementExists("scrambledWord")) {
         document.getElementById("scrambledWord").textContent = scrambledWord;
     }
+    resetTimer();
+     // Enable buttons
+     document.getElementById("userInput").disabled = false;
+     document.getElementById("stopButton").disabled = false;
+     document.getElementById("hintButton").disabled = false;
+     document.getElementById("easyButton").disabled = false;
+     document.getElementById("mediumButton").disabled = false;
+     document.getElementById("hardButton").disabled = false;
+ }
 
-    function checkAnswer() {
+
+function stopGame() {
+    clearInterval(timer);
+    document.getElementById("result").textContent = "Game stopped. Final score: " + score;
+    document.getElementById("scrambledWord").textContent = "";
+    document.getElementById("userInput").value = "";
+    document.getElementById("userInput").disabled = true;
+    document.getElementById("stopButton").disabled = true;
+    // Disable other game buttons
+    document.getElementById("hintButton").disabled = true;
+    document.getElementById("easyButton").disabled = true;
+    document.getElementById("mediumButton").disabled = true;
+    document.getElementById("hardButton").disabled = true;
+}
+
+function checkAnswer() {
+    if (elementExists("userInput") && elementExists("result") && elementExists("score")) {
         const userInput = document.getElementById("userInput").value.toLowerCase();
         if (userInput === currentWord) {
-            document.getElementById("result").textContent = "Correct!";
+            score += calculateScore();
+            document.getElementById("result").textContent = "Correct! +" + calculateScore() + " points";
+            document.getElementById("score").textContent = "Score: " + score;
             startGame();
         } else {
             document.getElementById("result").textContent = "Incorrect. Try again.";
         }
         document.getElementById("userInput").value = "";
     }
+}
 
+function calculateScore() {
+    let baseScore = currentWord.length * 10;
+    let timeBonus = timeLeft * 2;
+    let difficultyMultiplier = currentLevel === "easy" ? 1 : currentLevel === "medium" ? 1.5 : 2;
+    return Math.round((baseScore + timeBonus) * difficultyMultiplier);
+}
+
+function resetTimer() {
+    clearInterval(timer);
+    timeLeft = 60;
+    updateTimerDisplay();
+    timer = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            if (elementExists("result")) {
+                document.getElementById("result").textContent = "Time's up! The word was: " + currentWord;
+            }
+            startGame();
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay() {
+    if (elementExists("timer")) {
+        document.getElementById("timer").textContent = "Time: " + timeLeft + "s";
+    }
+}
+
+function provideHint() {
+    if (elementExists("hint") && elementExists("score")) {
+        let hint = "First letter: " + currentWord[0];
+        document.getElementById("hint").textContent = hint;
+        score -= 5;
+        document.getElementById("score").textContent = "Score: " + score;
+    }
+}
+
+function changeLevel(level) {
+    currentLevel = level;
+    startGame();
+}
+
+// Initialize the game
+if (elementExists('scrambledWord')) {
     startGame();
 
-    // Add event listeners for word scramble game
+    // Add event listeners
     if (elementExists('userInput')) {
         document.getElementById('userInput').addEventListener('keyup', function(event) {
             if (event.key === 'Enter') {
@@ -46,8 +134,26 @@ if (elementExists('scrambledWord')) {
             }
         });
     }
-}
 
+    if (elementExists('hintButton')) {
+        document.getElementById('hintButton').addEventListener('click', provideHint);
+    }
+
+    if (elementExists('easyButton')) {
+        document.getElementById('easyButton').addEventListener('click', () => changeLevel('easy'));
+    }
+
+    if (elementExists('mediumButton')) {
+        document.getElementById('mediumButton').addEventListener('click', () => changeLevel('medium'));
+    }
+
+    if (elementExists('hardButton')) {
+        document.getElementById('hardButton').addEventListener('click', () => changeLevel('hard'));
+    }
+    if (elementExists('stopButton')) {
+        document.getElementById('stopButton').addEventListener('click', stopGame);
+    }
+}
 // Feedback Form
 if (elementExists('feedbackForm')) {
     document.getElementById('feedbackForm').addEventListener('submit', function(event) {

@@ -26,7 +26,7 @@
                     <li>Look at the jumbled letters on the screen.</li>
                     <li>Try to unscramble the letters to make a word in Te Reo Māori.</li>
                     <li>Type your answer in the input box.</li>
-                    <li>Click the "Submit" button to check if your answer is correct.</li>
+                    <li>Click the "Submit" button or press Enter to check if your answer is correct.</li>
                     <li>If your answer is right, you'll see a "Correct!" message, and a new scrambled word will appear.</li>
                     <li>If your answer is wrong, you'll see an "Incorrect. Try again." message, and you can try again.</li>
                 </ol>
@@ -37,6 +37,18 @@
                 <input type="text" id="userInput" placeholder="Enter the unscrambled word">
                 <button onclick="checkAnswer()">Submit</button>
                 <p id="result"></p>
+                <p id="score">Score: 0</p>
+                <p id="timer">Time: 90s</p>
+                <p id="hint"></p>
+                <button id="hintButton">Hint</button>
+                <div class="difficulty-buttons">
+                    <button id="easyButton">Easy</button>
+                    <button id="mediumButton">Medium</button>
+                    <button id="hardButton">Hard</button>
+                </div>
+                <div class="end-game-button">
+                    <button id="stopButton">Stop Game</button>
+                </div>
             </section>
         </main>
         <footer class="footer">
