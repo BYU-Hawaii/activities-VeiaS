@@ -1,3 +1,9 @@
+// Common function to check if an element exists
+function elementExists(id) {
+    return document.getElementById(id) !== null;
+}
+
+//Simon Says Game
 const buttons = ['lion', 'elephant', 'monkey', 'penguin', 'chicken', 'octopus'];
 let gameSequence = [];
 let playerSequence = [];
