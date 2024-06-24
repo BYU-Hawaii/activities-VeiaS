@@ -99,3 +99,44 @@ function playSound(animal) {
     const audio = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${buttons.indexOf(animal) + 1}.mp3`);
     audio.play();
 }
+
+// Feedback Form
+if (elementExists('feedbackForm')) {
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the traditional way
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var rating = document.getElementById('rating').value;
+        var comments = document.getElementById('comments').value;
+
+        var nameValid = /^[a-zA-Z\s]+$/.test(name); // name should contain only letters and spaces
+        var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Simple email pattern check
+        var commentsValid = comments.length >= 4; // Comments should be at least 4 characters long
+        var ratingValid = rating !== "";
+
+        document.getElementById('nameFeedback').style.display = nameValid ? 'none' : 'block';
+        document.getElementById('emailFeedback').style.display = emailValid ? 'none' : 'block';
+        document.getElementById('commentsFeedback').style.display = commentsValid ? 'none' : 'block';
+        document.getElementById('ratingFeedback').style.display = ratingValid ? 'none' : 'block';
+
+        document.getElementById('nameFeedback').textContent = nameValid ? '' : 'Name should contain only letters and spaces.';
+        document.getElementById('emailFeedback').textContent = emailValid ? '' : 'Please enter a valid email address.';
+        document.getElementById('commentsFeedback').textContent = commentsValid ? '' : 'Comments should be at least 4 characters long.';
+        document.getElementById('ratingFeedback').textContent = ratingValid ? '' : 'Please select a rating.';
+
+        var formValid = nameValid && emailValid && commentsValid && ratingValid;
+
+        if (formValid) {
+            document.getElementById('feedbackFeedback').textContent = 'Your feedback was accepted!';
+            document.getElementById('feedbackFeedback').style.display = 'block';
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('rating').value = '';
+            document.getElementById('comments').value = ''
+        } else {
+            document.getElementById('feedbackFeedback').textContent = '';
+            document.getElementById('feedbackFeedback').style.display = 'none';
+        }
+    });
+}
