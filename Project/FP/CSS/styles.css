@@ -1,6 +1,6 @@
 .grid-container {
     font-family: 'Fredoka One', cursive;
-    background-color: #56F1FF;
+    background-image: url(../images/background.webp);
     display: grid;
     justify-content: center;
     margin: 50px;
@@ -21,8 +21,9 @@
 
 .main {
     grid-area: main;
-    background-color: #fff;
+    background-color: #b3f813;
     padding: 20px;
+    margin: 50px;
     margin-bottom: 2rem;
 }
 
@@ -241,7 +242,7 @@ iframe {
 
     .animal-grid {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto auto;
     }
     
     .animal-grid img {
@@ -280,6 +281,11 @@ iframe {
 
     h1 {
         font-size: 40px;
+    }
+
+    .animal-grid {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
     }
 
     .animal-fact img {
