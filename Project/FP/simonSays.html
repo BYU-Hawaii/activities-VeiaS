@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Simon Says</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="wordscramble.html">Word Scramble</a></li>
+            <li><a href="funfacts.html">Fun-facts</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+    <div id="game-container">
+        <h1>Colorful Simon Says</h1>
+        <div id="buttons-container">
+            <div class="button" id="lion"></div>
+            <div class="button" id="elephant"></div>
+            <div class="button" id="monkey"></div>
+            <div class="button" id="penguin"></div>
+            <div class="button" id="chicken"></div>
+            <div class="button" id="octopus"></div>
+        </div>
+        <button id="start-button">Start Game</button>
+        <div id="score">Score: 0</div>
+        <div id="message"></div>
+    </div>
+    <audio id="background-music" loop>
+        <source src="audio/upbeat.mp3" type="audio/mpeg">
+    </audio>
+    <script src="Script/script.js"></script>
+</body>
+
+</html>
