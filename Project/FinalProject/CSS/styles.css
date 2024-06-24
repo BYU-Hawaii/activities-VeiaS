@@ -1,4 +1,4 @@
-/*page layout*/
+/*page layout and design*/
 .grid-container {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-image: url(../images/background.webp);
@@ -28,6 +28,18 @@
     margin-bottom: 2rem;
 }
 
+h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+/*Game button and info on home page*/
 .startbutton {
     display: inline-block;
     background-color: #ff6b6b;
@@ -51,18 +63,13 @@
     border-radius: 50%;
 }
 
+/*Simon says Game*/
 #game-container {
     background-color: #ffffff;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 0 20px rgba(246, 18, 18, 0.1);
     text-align: center;
-}
-
-h1 {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 20px;
 }
 
 #buttons-container {
@@ -120,7 +127,6 @@ h1 {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family: 'Fredoka One', cursive;
 }
 
 #start-button:hover {
@@ -163,11 +169,6 @@ h1 {
 .active {
     background-color: #00000033;
 }
-
-.hero {
-    text-align: center;
-    margin-bottom: 40px;
-  }
 
 /*footer*/
 .footer {
@@ -215,6 +216,7 @@ div {
 
 /* Tablet view */
 @media (min-width: 768px) {
+    /*page layout*/
     .grid-container {
         grid-template-areas: 
         "nav"
@@ -223,12 +225,15 @@ div {
         "footer";
         margin: 50px;
     }
+
+    /*horizontal navbar*/
     .nav li {
         display: inline;
         float: left;
         overflow: hidden;
     }
 
+    /*three column grid - images*/
     .animal-grid {
         display: grid;
         grid-template-columns: auto auto auto;
@@ -240,6 +245,7 @@ div {
         height: 90%;
     }
 
+    /*two column grid*/
     .animal-fact {
         display: grid;
         grid-template-columns: 40% 40%;
@@ -263,10 +269,6 @@ div {
 
 /* Desktop view */
 @media (min-width: 1024px) {
-    #game-container {
-        padding: 40px;
-        grid-template-columns: auto auto;
-    }
 
     h1 {
         font-size: 40px;
